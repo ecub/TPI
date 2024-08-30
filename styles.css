@@ -989,7 +989,8 @@
 
   @supports (-webkit-touch-callout: none) {
   .header, .intro {
-    height: -webkit-fill-available;
+    min-height: -webkit-fill-available;
+    height: 100vh;
   }
 }
 
