@@ -86,7 +86,7 @@
   }
 
   50% {
-    transform: rotateY(25deg);
+    transform: rotateY(20deg);
   }
   100% {
     transform: rotateY(0deg); 
@@ -1025,8 +1025,6 @@
     left: -60px;
   width: 200px;
   height: 200px;
-  background-image: url('img/img_phone.png');
-  animation: rotate-back-forth 8s ease-in-out infinite; 
 }
 
   .intro {
