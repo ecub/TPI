@@ -15,11 +15,69 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
   <meta name="msapplication-TileColor" content="#da532c" />
   <meta name="theme-color" content="#ffffff" />
+  <script type="text/javascript">
+    // Функция, которая выполняется после полной загрузки страницы
+window.addEventListener('load', function() {
+    // Найти элемент с идентификатором 'status' и сделать его плавно невидимым
+    var status = document.getElementById('status');
+    if (status) {
+        status.style.transition = 'opacity 0.5s';
+        status.style.opacity = 0;
+    }
+
+    // Найти элемент с идентификатором 'preloader', задержать 250 мс и сделать его плавно невидимым
+    var preloader = document.getElementById('preloader');
+    if (preloader) {
+        setTimeout(function() {
+            preloader.style.transition = 'opacity 0.5s';
+            preloader.style.opacity = 0;
+        }, 250);
+    }
+
+    // Найти все элементы с классом 'preload', задержать 250 мс и сделать их содержимое видимым
+    var preloadElements = document.querySelectorAll('.preload');
+    if (preloadElements.length > 0) {
+        setTimeout(function() {
+            preloadElements.forEach(function(element) {
+                element.style.overflow = 'visible';
+            });
+        }, 250);
+    }
+});
+  </script>
 
   <title>Token Producers Institute</title>
 </head>
 
 <body>
+  <style type="text/css">
+  #preloader {
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:#222425;
+  z-index:9; 
+}
+#status {
+  width:50px;
+  height:54px;
+  position:absolute;
+  left:50%;
+  top:50%; 
+  background-image:url(img/preloader.svg); 
+  background-repeat: no-repeat;
+  background-position: center;
+  margin:-25px 0 0 -27px; 
+}
+</style>
+
+  <div id="preloader" style="display: none;">
+  <div id="status" style="display: none;">&nbsp;</div>
+</div>
+
+<div class="preload" style="overflow: visible;">
 <header class="header">
   <div class="images"></div>
     <div class="header-content">
@@ -188,6 +246,7 @@
     </a>
     <div class="">&nbsp;</div>
   </footer>
+</div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
   <script>new WOW().init();</script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
