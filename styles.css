@@ -121,7 +121,7 @@
 
 .intro {
   min-height: 100vh;
-  width: 332px;
+  width: 320px;
   text-align: center;
   margin: 0px auto 0px;
   box-sizing: border-box;
@@ -986,11 +986,16 @@
 }
 
 @media (max-width: 768px) {
+
+  @supports (-webkit-touch-callout: none) {
+  .header, .intro {
+    height: -webkit-fill-available;
+  }
+}
+
   .header__logo {
     margin-top: 32px;
   }
-
-
 
 
 .header::before {
@@ -1031,7 +1036,7 @@
   .intro {
     margin: 0px auto 0;
     width: 100%;
-    max-width: 292px;
+    max-width: 320px;
   }
 
   .intro__title {
