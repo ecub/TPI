@@ -18,11 +18,14 @@
   <script src="jquery.min.js"></script>
   <script type="text/javascript">
      //<![CDATA[
-        $(window).on('load', function() {
-            $('#status').fadeOut();
-            $('#preloader').delay(250).fadeOut('fast'); 
-            $('.preload').delay(250).css({'overflow':'visible'});
-          })
+$(window).on('load', function() {
+    $('#status').fadeOut();
+    $('#preloader').delay(250).fadeOut('fast'); 
+    $('.preload').delay(250).css({'overflow':'visible'});
+
+    // Включение анимаций после загрузки страницы
+    $('.header__logo, .navigation, .intro__line').css({'animation-play-state': 'running'});
+});
     //]]>
   </script>
 
@@ -64,7 +67,7 @@
     <div class="header-content">
         <a href="index.html">
             <div class="header__logo-container">
-                <img src="img/logo.svg" alt="logo" class="header__logo" />
+                <img src="img/logo.svg" alt="logo" class="header__logo hidden" />
             </div>
         </a>
         <section class="intro">
@@ -80,7 +83,7 @@
 
 
   <nav class="navigation-wrapper">
-  <div class="navigation">
+  <div class="navigation hidden">
     <a href="#about" class="navigation__link">About TPI</a>
     <a href="#program" class="navigation__link">Program Details</a>
     <a href="#join" class="navigation__link">Join TPI</a>
@@ -151,7 +154,7 @@
       </div>
     </div>
   </section>
-  <section class="gallery" data-aos="fade-up">
+  <section class="gallery">
     <h2 id="program" class="gallery__title">What Will You Learn?</h2>
     <div class="gallery__items-container">
       <div class="gallery__image" data-aos="zoom-in" data-aos-offset="50">
@@ -233,24 +236,27 @@
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>AOS.init();</script>
   <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+$(document).ready(function() {
+  var myHash = location.hash;
+  location.hash = '';
+  if (myHash[1] !== undefined) {
+    $('html, body').animate({
+      scrollTop: $(myHash).offset().top - 65
+    }, 700);
+    location.hash = myHash;
+  }
+});
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-
-    function setHeight() {
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-
-window.addEventListener('resize', setHeight);
-window.addEventListener('orientationchange', setHeight);
-setHeight();
+$(document).ready(function() {
+  $('a[href*=#]').bind("click", function(e) {
+    var anchor = $(this);
+      $('html, body').stop().animate({
+        scrollTop: $(anchor.attr('href')).offset().top - 65
+      }, 700);
+      e.preventDefault();
+  });
+  return false;
+});
   </script>
 
 </body>

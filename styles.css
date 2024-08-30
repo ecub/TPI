@@ -117,6 +117,7 @@
   z-index: 2; /* Логотип должен быть выше навигации */
   animation: fadeInDown;
   animation-duration: 1s;
+  animation-play-state: paused;
 }
 
 .intro {
@@ -169,7 +170,8 @@
   overflow-x: auto; 
   overflow-y: hidden; 
   white-space: nowrap; 
-  max-width: calc(100% - 32px); 
+  max-width: calc(100% - 32px);
+  animation-play-state: paused;
 }
 
 .navigation::-webkit-scrollbar {
@@ -215,6 +217,7 @@
   transform-origin: left; 
   transform: scaleX(0); 
   animation: growWidth 1s ease-out forwards;
+  animation-play-state: paused;
 }
 
 .navigation__link {
@@ -987,17 +990,9 @@
 
 @media (max-width: 768px) {
 
-  .header, .intro {
-    height: calc(var(--vh, 1vh) * 100);
-    padding-bottom: env(safe-area-inset-bottom); 
-    box-sizing: border-box;
-  }
-
-
   .header__logo {
     margin-top: 32px;
   }
-
 
 .header::before {
     left: -80px;
