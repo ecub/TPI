@@ -1207,14 +1207,12 @@
     text-align: center;
     align-self: stretch;
     width: auto;
-    margin-top: 16px;
   }
 
   .gallery__description {
     align-self: stretch;
     text-align: center;
     width: auto;
-    margin-top: 0;
   }
 
   .info {
