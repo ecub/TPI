@@ -20,42 +20,45 @@
 </head>
 
 <body>
-  <header class="header">
-    <img src="img/img_ton.png" alt="img_ton" class="image__ton" />
-    <img src="img/img_phone.png" alt="img_phone" class="image__phone" />
-    <img src="img/img_sol.png" alt="img_sol" class="image__sol" />
-    <img src="img/img_tron.png" alt="img_tron" class="image__tron" />
-    <div class="header__logo-container">
-      <img src="img/logo.svg" alt="logo" class="header__logo" />
+<header class="header">
+  <div class="images"></div>
+    <div class="header-content">
+        <a href="index.html">
+            <div class="header__logo-container">
+                <img src="img/logo.svg" alt="logo" class="header__logo" />
+            </div>
+        </a>
+        <section class="intro">
+            <h1 class="intro__title">Token Producers</h1>
+            <p class="intro__description__1">Institute</p>
+            <img src="img/line.svg" alt="Decorative line" class="intro__line" />
+            <p class="intro__description__2">
+                Learn to successfully launch a meme token, free of charge!
+            </p>
+        </section>
     </div>
-    <section class="intro">
-
-      <h1 class="intro__title">Token Producers</h1>
-      <p class="intro__description__1">Institute</p>
-      <img src="img/line.svg" alt="Decorative line" class="intro__line" />
-      <p class="intro__description__2">
-        Learn to succesfully launch a token, free of charge!
-      </p>
-    </section>
+</header>
 
 
-
-  </header>
-  <nav class="navigation">
+  <nav class="navigation-wrapper">
+  <div class="navigation">
     <a href="#about" class="navigation__link">About TPI</a>
     <a href="#program" class="navigation__link">Program Details</a>
     <a href="#join" class="navigation__link">Join TPI</a>
+  </div>
   </nav>
-  <section class="section__text">
-    <h2 id="about" class="section__title " data-aos="fade-up">What is TPI?</h2>
+
+
+  <section class="section__text" id="about">
+    <h2 class="section__title" data-aos="fade-up">What is TPI?</h2>
     <p class="section__description" data-aos="fade-up">
       The Token Producers Institute (TPI) is your gateway to mastering the art
-      of token creation and launch within TON ecosystem. TPI provides the
+      of meme token creation and launch within TON ecosystem. TPI provides the
       tools, knowledge, and support you need to successfully launch tokens, in
       the rapidly growing memecoin market
     </p>
   </section>
-  <section class="features" data-aos="fade-up">
+  <section class="features" data-aos="zoom-in">
     <div class="features__item__1">
       <h3 class="features__title__1">Expert Guidance</h3>
       <p class="features__description">
@@ -89,9 +92,9 @@
     </div>
   </section>
   <section class="content">
-    <p id="join" class="content__text" data-aos="fade-up">Who Should Join?</p>
-    <div class="content__block" data-aos="fade-up">
-      <div class="content__block__1">
+    <p class="content__text" data-aos="fade-up">Who Should Join?</p>
+    <div class="content__block">
+      <div class="content__block__1" data-aos="zoom-in">
         <img src="img/duck_1.svg" alt="duck_1" class="content__image" />
         <h4 class="content__title">Aspiring Token Producers</h4>
         <p class="content__description">
@@ -99,7 +102,7 @@
           tokens
         </p>
       </div>
-      <div class="content__block__2">
+      <div class="content__block__2" data-aos="zoom-in">
         <img src="img/duck_2.svg" alt="duck_2" class="content__image" />
         <h4 class="content__title">Influencers and Streamers</h4>
         <p class="content__description">
@@ -179,10 +182,9 @@
     </div>
   </section>
 
-  <footer>
-    <a href="https://t.me/+VDnGlVFJHx05NGYy" target="_blank" class="button">
+  <footer id="join">
+    <a href="https://t.me/+VDnGlVFJHx05NGYy" target="_blank" class="button" data-aos="zoom-in"> 
       <div class="button__text__1">Join TPI for free</div>
-      <div class="button__text__2">→</div>
     </a>
     <div class="">&nbsp;</div>
   </footer>
@@ -190,6 +192,17 @@
   <script>new WOW().init();</script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>AOS.init();</script>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 
 </body>
 
