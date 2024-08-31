@@ -37,7 +37,7 @@
   width: 400px;
   height: 400px;
   background-image: url('img/img_ton.png');
-  animation: float 8s ease-in-out infinite;
+  animation: float 8s infinite;
 }
 
 .header::after {
@@ -46,7 +46,7 @@
   width: 240px;
   height: 400px;
   background-image: url('img/img_tron.png');
-  animation: float 16s ease-in-out infinite;
+  animation: float 12s infinite;
 }
 
 .images::before,
@@ -77,7 +77,7 @@
   width: 240px;
   height: 240px;
   background-image: url('img/img_sol.png');
-  animation: float 4s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
 }
 
 @keyframes rotate-back-forth {
@@ -86,10 +86,10 @@
   }
 
   50% {
-    transform: rotateY(16deg) rotateX(-4deg);
+    transform: rotateY(24deg) rotateX(-4deg);
   }
   100% {
-    transform: rotateY(0deg) rotateX(0deg); 
+    transform: rotateY(0deg) rotateX(0deg);
   }
 }
 .images::after {
@@ -98,7 +98,17 @@
   width: 320px;
   height: 320px;
   background-image: url('img/img_phone.png');
-    animation: rotate-back-forth 4s infinite; 
+  animation: rotate-back-forth 4s ease-in-out infinite; 
+}
+
+.mrdn {
+  bottom: 120px;
+  left: 260px;
+  width: 120px;
+  height: 120px;
+  background-image: url('img/mrdn.png');
+  position: absolute;
+  background-size: 120px;
 }
 
 .header__logo-container {
@@ -704,6 +714,16 @@
 
 @media (max-width: 1200px) {
 
+  .mrdn {
+  bottom: 240px;
+  left: 100px;
+  width: 80px;
+  height: 80px;
+  background-image: url('img/mrdn.png');
+  position: absolute;
+  background-size: 80px;
+}
+
   .header__logo {
     margin-top: 48px;
   }
@@ -714,7 +734,7 @@
   width: 240px;
   height: 240px;
   background-image: url('img/img_ton.png');
-  animation: float 8s ease-in-out infinite;
+  animation: float 8s infinite;
 }
 
 .header::after {
@@ -723,7 +743,7 @@
   width: 144px;
   height: 240px;
   background-image: url('img/img_tron.png');
-  animation: float 16s ease-in-out infinite;
+  animation: float 12s infinite;
 }
 
 .images::before {
@@ -732,7 +752,7 @@
   width: 160px;
   height: 160px;
   background-image: url('img/img_sol.png');
-  animation: float 4s ease-in-out infinite;
+  animation: float 2s ease-in-out infinite;
 }
 .images::after {
   bottom: 120px;
@@ -740,7 +760,7 @@
   width: 240px;
   height: 240px;
   background-image: url('img/img_phone.png');
-  animation: rotate-back-forth 8s ease-in-out infinite; 
+  animation: rotate-back-forth 4s ease-in-out infinite; 
 }
 
   .intro {
@@ -989,6 +1009,15 @@
 }
 
 @media (max-width: 768px) {
+    .mrdn {
+  bottom: 130px;
+  left: 50px;
+  width: 80px;
+  height: 80px;
+  background-image: url('img/mrdn.png');
+  position: absolute;
+  background-size: 80px;
+}
 
 .intro, .header {
   min-height: 100vh; 
@@ -1013,7 +1042,7 @@
   width: 120px;
   height: 200px;
   background-image: url('img/img_tron.png');
-  animation: float 16s ease-in-out infinite;
+  animation: float 12s infinite;
 }
 
 .images::before {
@@ -1205,12 +1234,14 @@
     text-align: center;
     align-self: stretch;
     width: auto;
+    margin-top: 16px;
   }
 
   .gallery__description {
     align-self: stretch;
     text-align: center;
     width: auto;
+    margin-top: 0;
   }
 
   .info {
