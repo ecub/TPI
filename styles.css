@@ -306,7 +306,7 @@
 }
 
 .features {
-  margin: 160px;
+  margin: 160px auto;
   display: flex;
   gap: 40px;
   justify-content: center;
